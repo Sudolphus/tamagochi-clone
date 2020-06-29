@@ -4,14 +4,14 @@ export class Pet {
     this.hunger = 0;
     this.fatigue = 0;
     this.mood = 0;
-    this.fatigue=0;
   }
 
   incrementNeeds() {
     this.incrementHunger();
     this.incrementFatigue();
+    this.incrementMood();
   }
-  
+
   incrementHunger() {
     setInterval(()=>{
       this.hunger++;
@@ -22,5 +22,11 @@ export class Pet {
     setInterval(()=>{
       this.fatigue++;
     }, 2000);
+  }
+
+  incrementMood() {
+    setInterval(()=>{
+      this.mood+=2;
+    }, 1000);
   }
 }
