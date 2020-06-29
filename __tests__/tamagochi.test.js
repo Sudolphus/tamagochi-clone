@@ -14,7 +14,7 @@ describe("tamagochi-clone", ()=>{
   });
 
   test('Program can create a Pet object', ()=>{
-    expect(Pet).toBeDefined();
-    expect(Pet.name).toEqual('Test');
+    expect(pet).toBeDefined();
+    expect(pet.name).toEqual('Test');
   });
 });
