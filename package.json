@@ -1,7 +1,7 @@
 {
-  "name": "default",
+  "name": "tamagochi-clone",
   "version": "1.0.0",
-  "description": "",
+  "description": "a clone of a tamagochi",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode development",

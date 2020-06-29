@@ -1,12 +1,12 @@
-# _{Application Name}_
+# _Tamagochi Clone_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _A Tamagochi-like Game_
 
-#### By _**Micheal Hansen**_
+#### By _**Micheal Hansen & Tristan Emmerson**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This is a game wherein a player tries to take care of a creature that is suspiciously similar to a tamagochi._
 
 ## Specifications
 
@@ -28,20 +28,18 @@ Open by downloading:
 
 Open via Bash/GitBash:
 1. Clone this repository onto your computer:
-`git clone {PUT_REPO_HERE}`
-2. Navigate into the `{NAME_OF_DIRECTORY}` directory in Visual Studio Code or preferred text editor
+`git clone https://github.com/Sudolphus/tamagochi-clone`
+2. Navigate into the `tamagochi-clone` directory in Visual Studio Code or preferred text editor
 `code .`
 3. Get the necessary packages `npm install`.
 4. Compile the code `npm run build`.
 5. Open index.html in Chrome or preferred browser:
-`open dit/index.html`
-
-#### To see my live website go to {GH_PAGES_LINK_HERE}!
+`open dist/index.html`
 
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_None currently known_
 
 ## Support and contact details
 
@@ -53,9 +51,10 @@ _Please reach out through my GitHub account._
 * _CSS (including Bootstrap)_
 * _JavaScript (including jQuery)_
 * _VSCode_
+* _Node.js (including webpack)_
 
 ### License
 
 MIT License.
 
-Copyright (c) 2020 **_Micheal Hansen_**
+Copyright (c) 2020 **_Micheal Hansen & Tristan Emmerson_**
