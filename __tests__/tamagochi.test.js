@@ -44,5 +44,23 @@ describe("tamagochi-clone", ()=>{
   test('program increments mood as time passes', ()=>{
     jest.advanceTimersByTime(1001);
     expect(pet.mood).toEqual(2);
-  })
+  });
+
+  test('should reset hunger stat if fed', ()=>{
+    jest.advanceTimersByTime(5001);
+    pet.feed();
+    expect(pet.hunger).toEqual(0);
+  });
+
+  test('should reset fatigue if nap', ()=>{
+    jest.advanceTimersByTime(5001);
+    pet.nap();
+    expect(pet.fatigue).toEqual(0);
+  });
+
+  test('should reset mood if play', ()=>{
+    jest.advanceTimersByTime(5001);
+    pet.play();
+    expect(pet.mood).toEqual(0);
+  });
 });
