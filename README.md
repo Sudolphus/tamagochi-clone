@@ -12,9 +12,18 @@ _This is a game wherein a player tries to take care of a creature that is suspic
 
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **Homepage** | User accesses localhost:5004 | Homepage with user input form |
-| **Program Gathers User Input** | User input: "10" | Output: "10" |
-
+| **Program can create a Pet object** | Input: User clicks New Game | Output: Pet = {} |
+| **Pet object tracks a hunger stat** | Input: None | Output: Pet = {Hunger = 0} |
+| **Pet object tracks a fatigue stat** | Input: None | Output: Pet = {Hunger = 0, Fatigue = 0} |
+| **Pet object tracks a mood stat** | Input: None | Output: Pet = {Hunger = 0, Fatigue = 0, Mood = 0} |
+| **Hunger stat increments as time passes** | Input: User waits 5 seconds | Output: Pet = {Hunger = 5, ..} |
+| **Fatigue stat increments as time passes** | Input: User waits 5 seconds | Output: Pet = {.., Fatigue = 2, ..} |
+| **Mood stat increments as time passes** | Input: User waits 5 seconds | Output: Pet = {.., Mood = 10} |
+| **Feed button resets the Hunger stat** | Input: User clicks feed | Output: Pet = {Hunger = 0, ..} |
+| **Nap button resets the Fatigue stat** | Input: User clicks nap | Output: Pet = {.., Fatigue = 0, ..} |
+| **Play button resets the Mood stat** | Input: User clicks play | Output: Pet = {.., Mood = 0} |
+| **Object detects a game over if any stat hits the cap** | Input: Hunger stat reaches 20 | Output: Game Over |
+| **Object prevents further input if game is over** | Input: User clicks play after Game Over | Output: None |
 
 ## Setup/Installation Requirements
 
