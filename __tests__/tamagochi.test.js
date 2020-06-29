@@ -17,4 +17,16 @@ describe("tamagochi-clone", ()=>{
     expect(pet).toBeDefined();
     expect(pet.name).toEqual('Test');
   });
+
+  test('Program tracks a hunger stat', ()=>{
+    expect(pet.hunger).toEqual(0);
+  });
+
+  test('Program tracks a fatigue stat', ()=>{
+    expect(pet.fatigue).toEqual(0);
+  });
+
+  test('Program tracks a mood stat', ()=>{
+    expect(pet.mood).toEqual(0);
+  })
 });
