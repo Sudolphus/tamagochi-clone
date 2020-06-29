@@ -7,8 +7,7 @@ describe("tamagochi-clone", ()=>{
 
   beforeEach(()=>{
     pet = new Pet('Test');
-    pet.incrementHunger();
-    pet.incrementFatigue();
+    pet.incrementNeeds();
   });
 
   afterEach(()=>{
@@ -41,4 +40,9 @@ describe("tamagochi-clone", ()=>{
     jest.advanceTimersByTime(2001);
     expect(pet.fatigue).toEqual(1);
   });
+
+  test('program increments mood as time passes', ()=>{
+    jest.advanceTimersByTime(1001);
+    expect(pet.mood).toEqual(2);
+  })
 });

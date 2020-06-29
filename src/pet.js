@@ -7,6 +7,11 @@ export class Pet {
     this.fatigue=0;
   }
 
+  incrementNeeds() {
+    this.incrementHunger();
+    this.incrementFatigue();
+  }
+  
   incrementHunger() {
     setInterval(()=>{
       this.hunger++;
