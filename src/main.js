@@ -14,6 +14,7 @@ function attachNewPetListener() {
       return;
     }
     let newPet = new Pet(petName);
+    newPet.incrementNeeds();
     addNewPet(newPet);
   });
 }
