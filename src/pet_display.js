@@ -1,7 +1,7 @@
 import $ from 'jQuery';
 
 function addPetButtonListeners(pet) {
-  const petBox = $(`${pet.name}`);
+  const petBox = $(`#${pet.name}`);
   petBox.on('click', '.feedPet', function(event) {
     event.preventDefault;
     pet.feed();
@@ -32,7 +32,7 @@ export function addNewPet(pet) {
       fatigueSpan.html(pet.fatigue);
       moodSpan.html(pet.mood);
     } else {
-      $(`${pet.name}`).html("Game Over!");
+      $(`#${pet.name}`).html("Game Over!");
       return;
     }
   });
