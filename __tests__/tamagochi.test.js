@@ -63,4 +63,9 @@ describe("tamagochi-clone", ()=>{
     pet.play();
     expect(pet.mood).toEqual(0);
   });
+
+  test('should detect a game over if a stat hits the cap', ()=>{
+    jest.advanceTimersByTime(60001);
+    expect(pet.gameOver).toBe(true);
+  });
 });
