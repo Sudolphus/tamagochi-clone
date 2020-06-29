@@ -29,4 +29,16 @@ export class Pet {
       this.mood+=2;
     }, 1000);
   }
+
+  feed() {
+    this.hunger = 0;
+  }
+
+  nap() {
+    this.fatigue = 0;
+  }
+
+  play() {
+    this.mood = 0;
+  }
 }
