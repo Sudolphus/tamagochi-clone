@@ -9,7 +9,7 @@ export class Pet {
   }
 
   detectGameOver() {
-    if (this.hunger >= this.needsCap || this.fatigue >= this.needsCap || this.mood >= this.needsCap) {
+    if (this.hunger >= this.needsCap || this.fatigue >= this.needsCap || this.mood >= this.needsCap || this.gameOver === true) {
       return true;
     } else {
       return false;
@@ -24,30 +24,39 @@ export class Pet {
   incrementHunger() {
     setInterval(()=>{
       this.hunger++;
+      this.gameOver = this.detectGameOver();
     }, 1000);
   }
 
   incrementFatigue() {
     setInterval(()=>{
       this.fatigue++;
+      this.gameOver = this.detectGameOver();
     }, 2000);
   }
 
   incrementMood() {
     setInterval(()=>{
       this.mood+=2;
+      this.gameOver = this.detectGameOver();
     }, 1000);
   }
 
   feed() {
-    this.hunger = 0;
+    if (!this.gameOver) {
+      this.hunger = 0;
+    }
   }
 
   nap() {
-    this.fatigue = 0;
+    if (!this.gameOver) {
+      this.fatigue = 0;
+    }
   }
 
   play() {
-    this.mood = 0;
+    if (!this.gameOver) {
+      this.mood = 0;
+    }
   }
 }
