@@ -1,11 +1,20 @@
 export class Pet {
   constructor(name) {
     this.name = name;
+    this.gameOver = false;
     this.hunger = 0;
     this.fatigue = 0;
     this.mood = 0;
+    this.needsCap = 120;
   }
 
+  detectGameOver() {
+    if (this.hunger >= this.needsCap || this.fatigue >= this.needsCap || this.mood >= this.needsCap) {
+      return true;
+    } else {
+      return false;
+    }
+  }
   incrementNeeds() {
     this.incrementHunger();
     this.incrementFatigue();
