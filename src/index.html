@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tamagotchi</title>
+    <title>Tamagochi</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="page-header">
         <h1>Tama-Clone!</h1>
         <p>Your fun-time pet that is legally distinct from other fun-time pets!</p>
       </div>
-
-      <div class="form-group" id="petNameInput">
+      
+      <div class="form-group">
         <label for="namePet">Name Your New Friend!</label>
         <input type=text name="namePet" id="namePet" class="form-control">
+        <p class='errorMessage'>Enter a name for your new pet!</p>
+      </div>
+      <div class="form-group">
+        <label for="petTypeSelector">What Type is Your New Friend?</label>
+        <select name="petTypeSelector" id="petTypeSelector">
+          <option value='giraffe'>Giraffe</option>
+          <option value='bunny'>Bunny</option>
+          <option value='penguin'>Penguin</option>
+          <option value='lion'>Lion</option>
+        </select>
       </div>
       <button class="btn btn-info" id="addPet">Add a New Pet!</button>
 
       <ul id="petList">
 
       </ul>
+      <div class='hiddenPics'>
+        <img class='petPic' src='./assets/images/pet-giraffe.png'>
+        <img class='petPic' src='./assets/images/pet-dead.png'>
+        <img class='petPic' src='./assets/images/pet-bunny.png'>
+        <img class='petPic' src='./assets/images/pet-penguin.png'>
+        <img class='petPic' src='./assets/images/pet-lion.png'>
+      </div>
     </div>
   </body>
 </html>

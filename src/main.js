@@ -9,13 +9,15 @@ function attachNewPetListener() {
   $('#addPet').click(function(event) {
     event.preventDefault();
     const petName = $('#namePet').val();
+    const petType = $('#petTypeSelector').val();
     if (!petName) {
-      alert('Enter a name for your new pet');
+      $('.errorMessage').show();
       return;
     }
+    $('.errorMessage').hide();
     let newPet = new Pet(petName);
     newPet.incrementNeeds();
-    addNewPet(newPet);
+    addNewPet(newPet, petType);
   });
 }
 

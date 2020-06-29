@@ -19,7 +19,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Tamagochi Clone',
       template: './src/index.html',
-      inject: 'body'
+      inject: 'head'
     })
   ],
   module: {

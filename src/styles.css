@@ -1,0 +1,38 @@
+.container-fluid {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+}
+
+.page-header {
+  text-align: center;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 10px;
+  display: none;
+}
+
+.gameOver {
+  color: red;
+}
+
+.petBox {
+  border: .5px solid white;
+}
+
+.petPic {
+  float: left;
+  max-height: 50px;
+  max-width: 50px;
+  margin-right: 5px;
+}
+
+.killPet {
+  margin: 10px;
+}
+
+.hiddenPics {
+  display: none;
+}

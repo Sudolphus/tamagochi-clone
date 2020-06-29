@@ -14,13 +14,18 @@ function addPetButtonListeners(pet) {
     event.preventDefault();
     pet.play();
   });
+  petBox.on('click', '.killPet', function(event) {
+    event.preventDefault();
+    pet.gameOver = true;
+  });
 }
 
-export function addNewPet(pet) {
-  let petHTML = `<div class='petBox' id='${pet.name}'><h3>${pet.name}</h3><div class='row'>`;
+export function addNewPet(pet, petType) {
+  let petHTML = `<div class='petBox' id='${pet.name}'><img class="petPic" src='assets/images/pet-${petType}.png'><h3>${pet.name}</h3><div class='row'>`;
   petHTML += `<div class = 'col-md-4'><h5>Hunger</h5><br><span id='hungerValue${pet.name}'></span><br><button class='btn btn-info feedPet'>Feed!</button></div>`;
   petHTML += `<div class = 'col-md-4'><h5>Fatigue</h5><br><span id='fatigueValue${pet.name}'></span><br><button class='btn btn-info napPet'>Nap!</button></div>`;
   petHTML += `<div class = 'col-md-4'><h5>Mood</h5><br><span id='moodValue${pet.name}'></span><br><button class='btn btn-info playPet'>Play!</button></div></div>`;
+  petHTML += `<div class = 'row'><div class = 'col-md-4'></div><div class = 'col-md-4'><button class='btn btn-warning killPet'>Kill This Pet!</button></div><div class = 'col-md-4'></div></div>`;
   $('#petList').append(petHTML);
   addPetButtonListeners(pet);
   setInterval(()=>{
@@ -32,8 +37,9 @@ export function addNewPet(pet) {
       fatigueSpan.html(pet.fatigue);
       moodSpan.html(pet.mood);
     } else {
-      $(`#${pet.name}`).html("Game Over!");
+      $(`#${pet.name}`).html(`<img class="petPic" src='assets/images/pet-dead.png'>Game Over! ${pet.name} died because you're terrible! How do you live with yourself?`);
+      $(`#${pet.name}`).addClass('gameOver');
       return;
     }
-  });
+  }, 1000);
 }
