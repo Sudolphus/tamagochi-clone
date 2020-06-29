@@ -7,6 +7,7 @@ describe("tamagochi-clone", ()=>{
 
   beforeEach(()=>{
     pet = new Pet('Test');
+    pet.incrementHunger();
   });
 
   afterEach(()=>{
