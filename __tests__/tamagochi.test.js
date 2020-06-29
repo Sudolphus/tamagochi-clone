@@ -28,5 +28,10 @@ describe("tamagochi-clone", ()=>{
 
   test('Program tracks a mood stat', ()=>{
     expect(pet.mood).toEqual(0);
-  })
+  });
+
+  test('program increments hunger as time passes', ()=>{
+    jest.advanceTimersByTime(1001);
+    expect(pet.hunger).toEqual(1);
+  });
 });
