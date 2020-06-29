@@ -35,4 +35,9 @@ describe("tamagochi-clone", ()=>{
     jest.advanceTimersByTime(1001);
     expect(pet.hunger).toEqual(1);
   });
+
+  test('program increments fatigue as time passes', ()=>{
+    jest.advanceTimersByTime(2001);
+    expect(pet.fatigue).toEqual(1);
+  });
 });
