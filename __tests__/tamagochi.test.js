@@ -78,4 +78,29 @@ describe("tamagochi-clone", ()=>{
     expect(pet.fatigue).toEqual(30);
     expect(pet.mood).toEqual(120);
   });
+
+  test('should count level up points when button is pushed', ()=>{
+    pet.feed();
+    pet.nap();
+    pet.play();
+    expect(pet.levelUpPoints).toEqual(3);
+  });
+
+  test('should reduce needs cap when level up points hits 5', ()=>{
+    pet.feed();
+    pet.feed();
+    pet.feed();
+    pet.feed();
+    pet.feed();
+    expect(pet.needsCap).toEqual(110);
+  });
+
+  test('should reset level up points when a pet levels up', ()=>{
+    pet.feed();
+    pet.feed();
+    pet.feed();
+    pet.feed();
+    pet.feed();
+    expect(pet.levelUpPoints).toEqual(0);
+  });
 });

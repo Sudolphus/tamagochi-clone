@@ -9,6 +9,7 @@ export class Pet {
     this.mood = 0;
     this.moodIncrement;
     this.needsCap = 120;
+    this.levelUpPoints = 0;
   }
 
   detectGameOver() {
@@ -45,27 +46,40 @@ export class Pet {
     }, 1000);
   }
 
+  levelUpDetector() {
+    if (this.levelUpPoints === 5) {
+      this.needsCap -= 10;
+      this.levelUpPoints = 0;
+    }
+  }
+
   feed() {
     if (!this.gameOver) {
       this.hunger = 0;
+      this.levelUpPoints++;
       clearInterval(this.hungerIncrement);
       this.incrementHunger();
+      this.levelUpDetector();
     }
   }
 
   nap() {
     if (!this.gameOver) {
       this.fatigue = 0;
+      this.levelUpPoints++;
       clearInterval(this.fatigueIncrement);
       this.incrementFatigue();
+      this.levelUpDetector();
     }
   }
 
   play() {
     if (!this.gameOver) {
       this.mood = 0;
+      this.levelUpPoints++;
       clearInterval(this.moodIncrement);
       this.incrementMood();
+      this.levelUpDetector();
     }
   }
 }
