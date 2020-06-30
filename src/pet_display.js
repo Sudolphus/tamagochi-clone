@@ -46,5 +46,5 @@ export function addNewPet(pet, petType) {
       $(`#${pet.name}`).addClass('gameOver');
       return;
     }
-  }, 1000);
+  });
 }

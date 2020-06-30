@@ -3,8 +3,11 @@ export class Pet {
     this.name = name;
     this.gameOver = false;
     this.hunger = 0;
+    this.hungerIncrement;
     this.fatigue = 0;
+    this.fatigueIncrement;
     this.mood = 0;
+    this.moodIncrement;
     this.needsCap = 120;
   }
 
@@ -22,21 +25,21 @@ export class Pet {
   }
 
   incrementHunger() {
-    setInterval(()=>{
+    this.hungerIncrement = setInterval(()=>{
       this.hunger++;
       this.gameOver = this.detectGameOver();
     }, 1000);
   }
 
   incrementFatigue() {
-    setInterval(()=>{
+    this.fatigueIncrement = setInterval(()=>{
       this.fatigue++;
       this.gameOver = this.detectGameOver();
     }, 2000);
   }
 
   incrementMood() {
-    setInterval(()=>{
+    this.moodIncrement = setInterval(()=>{
       this.mood+=2;
       this.gameOver = this.detectGameOver();
     }, 1000);
@@ -45,18 +48,24 @@ export class Pet {
   feed() {
     if (!this.gameOver) {
       this.hunger = 0;
+      clearInterval(this.hungerIncrement);
+      this.incrementHunger();
     }
   }
 
   nap() {
     if (!this.gameOver) {
       this.fatigue = 0;
+      clearInterval(this.fatigueIncrement);
+      this.incrementFatigue();
     }
   }
 
   play() {
     if (!this.gameOver) {
       this.mood = 0;
+      clearInterval(this.moodIncrement);
+      this.incrementMood();
     }
   }
 }

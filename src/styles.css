@@ -2,6 +2,7 @@
   background-color: black;
   color: white;
   min-height: 100vh;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .page-header {
@@ -11,7 +12,6 @@
 .errorMessage {
   color: red;
   font-size: 10px;
-  display: none;
 }
 
 .gameOver {
@@ -20,6 +20,8 @@
 
 .petBox {
   border: .5px solid white;
+  min-height: 55px;
+  padding: 5px;
 }
 
 .petPic {

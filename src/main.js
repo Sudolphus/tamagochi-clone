@@ -11,10 +11,13 @@ function attachNewPetListener() {
     const petName = $('#namePet').val();
     const petType = $('#petTypeSelector').val();
     if (!petName) {
-      $('.errorMessage').show();
+      $('.errorMessage').text('Enter a name for your fun-time pet!');
+      return;
+    } else if (petName.search(/[^A-Z\d]/i) > -1) {
+      $('.errorMessage').text("That isn't much of a name! Enter a better one!");
       return;
     }
-    $('.errorMessage').hide();
+    $('.errorMessage').text('');
     let newPet = new Pet(petName);
     newPet.incrementNeeds();
     addNewPet(newPet, petType);
