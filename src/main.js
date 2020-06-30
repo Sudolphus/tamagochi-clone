@@ -5,7 +5,8 @@ import './styles.css';
 import { Pet } from './pet';
 import { addNewPet } from './pet_display';
 
-function attachNewPetListener() {
+$(document).ready(function() {
+  const usedPetNames = [];
   $('#addPet').click(function(event) {
     event.preventDefault();
     const petName = $('#namePet').val();
@@ -16,14 +17,14 @@ function attachNewPetListener() {
     } else if (petName.search(/[^A-Z\d]/i) > -1) {
       $('.errorMessage').text("That isn't much of a name! Enter a better one!");
       return;
+    } else if (usedPetNames.includes(petName)) {
+      $('.errorMessage').text("Your pet deserves his own name!");
+      return;
     }
     $('.errorMessage').text('');
+    usedPetNames.push(petName);
     let newPet = new Pet(petName);
     newPet.incrementNeeds();
     addNewPet(newPet, petType);
   });
-}
-
-$(document).ready(function() {
-  attachNewPetListener();
 });
