@@ -6,7 +6,7 @@
 
 ## Description
 
-_This is a game wherein a player tries to take care of a creature that is suspiciously similar to a tamagochi._
+_This is a game wherein a player tries to take care of a creature that is suspiciously similar to a tamagochi. All gifs are courtesy of Giphy_
 
 ## Specifications
 
@@ -31,10 +31,6 @@ Software Requirements
 1. Internet browser
 2. A code editor like VSCode or Atom to view or edit the codebase.
 
-Open by downloading:
-1. Download this repository onto your computer by clicking the 'clone or download button'
-2. Double click index.html to open it in your web browser
-
 Open via Bash/GitBash:
 1. Clone this repository onto your computer:
 `git clone https://github.com/Sudolphus/tamagochi-clone`
@@ -45,6 +41,8 @@ Open via Bash/GitBash:
 5. Open index.html in Chrome or preferred browser:
 `open dist/index.html`
 
+Note about GIFs:<br>
+This project uses GIFs from GIPHY via an API call, which in turn requires an API key. To get that to work, you'll need to get an API key from GIPHY, and create a .env file in the root directory with a line that reads `API_KEY: {Your Key Here}`
 
 ## Known Bugs
 

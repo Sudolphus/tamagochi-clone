@@ -1,19 +1,10 @@
 import $ from 'jQuery';
-import { getGif } from './fetch-gif';
+import { addAnimalGif } from './fetch-gif';
 import './assets/images/pet-bunny.png';
 import './assets/images/pet-dead.png';
 import './assets/images/pet-giraffe.png';
 import './assets/images/pet-lion.png';
 import './assets/images/pet-penguin.png';
-
-async function addAnimalGIF(animal, span) {
-  const animalGIFJson = await getGif(animal);
-  if (animalGIFJson) {
-    const animalGIF = animalGIFJson[0]['images']['fixed_height_small_still']['url'];
-    const gifHTML = `<img src='${animalGIF}' class='animalGIF'>`;
-    span.html(gifHTML);
-  }
-}
 
 function addPetButtonListeners(pet) {
   const petBox = $(`#${pet.name}`);
@@ -36,14 +27,15 @@ function addPetButtonListeners(pet) {
 }
 
 export function addNewPet(pet, petType) {
-  let petHTML = `<div class='petBox' id='${pet.name}'><img class="petPic" src='assets/images/pet-${petType}.png'><h3>${pet.name}</h3><span id='animalGIF${pet.name}'></span><br><h6>Neediness Level: <span id='needinessValue${pet.name}'></span><div class='row'>`;
-  petHTML += `<div class = 'col-md-4'><h5>Hunger</h5><br><span id='hungerValue${pet.name}'></span><br><button class='btn btn-info feedPet'>Feed!</button></div>`;
-  petHTML += `<div class = 'col-md-4'><h5>Fatigue</h5><br><span id='fatigueValue${pet.name}'></span><br><button class='btn btn-info napPet'>Nap!</button></div>`;
-  petHTML += `<div class = 'col-md-4'><h5>Mood</h5><br><span id='moodValue${pet.name}'></span><br><button class='btn btn-info playPet'>Play!</button></div></div>`;
+  let petHTML = `<div class='petBox' id='${pet.name}'><img class="petPic" src='assets/images/pet-${petType}.png'><h3>${pet.name}</h3><br><h6>Neediness Level: <span id='needinessValue${pet.name}'></span><div class='row'>`;
+  petHTML += `<div class = 'col-md-3'><h5>Hunger</h5><br><span id='hungerValue${pet.name}'></span><br><button class='btn btn-info feedPet'>Feed!</button></div>`;
+  petHTML += `<div class = 'col-md-3'><h5>Fatigue</h5><br><span id='fatigueValue${pet.name}'></span><br><button class='btn btn-info napPet'>Nap!</button></div>`;
+  petHTML += `<div class = 'col-md-3'><h5>Mood</h5><br><span id='moodValue${pet.name}'></span><br><button class='btn btn-info playPet'>Play!</button></div>`;
+  petHTML += `<div class = 'col-md-3'><span id='animalGIF${pet.name}'></span></div></div>`;
   petHTML += `<div class = 'row'><div class = 'col-md-4'></div><div class = 'col-md-4'><button class='btn btn-warning killPet'>Kill This Pet!</button></div><div class = 'col-md-4'></div></div>`;
   $('#petList').append(petHTML);
   addPetButtonListeners(pet);
-  addAnimalGIF(petType, $(`animalGIF${pet.name}`));
+  addAnimalGif(petType, $(`#animalGIF${pet.name}`));
   setInterval(()=>{
     if (pet.gameOver === false) {
       const needySpan = $(`#needinessValue${pet.name}`);
