@@ -10,6 +10,7 @@ export class Pet {
     this.moodIncrement;
     this.needsCap = 120;
     this.levelUpPoints = 0;
+    this.needinessLevel = 1;
   }
 
   detectGameOver() {
@@ -50,6 +51,7 @@ export class Pet {
     if (this.levelUpPoints === 5) {
       this.needsCap -= 10;
       this.levelUpPoints = 0;
+      this.needinessLevel++;
     }
   }
 

@@ -11,6 +11,7 @@ $(document).ready(function() {
     event.preventDefault();
     const petName = $('#namePet').val();
     const petType = $('#petTypeSelector').val();
+    $('#namePet').val('');
     if (!petName) {
       $('.errorMessage').text('Enter a name for your fun-time pet!');
       return;
@@ -26,5 +27,10 @@ $(document).ready(function() {
     let newPet = new Pet(petName);
     newPet.incrementNeeds();
     addNewPet(newPet, petType);
+  });
+
+  $('#showRules').click(function(event) {
+    event.preventDefault();
+    $('#rules').toggle();
   });
 });
