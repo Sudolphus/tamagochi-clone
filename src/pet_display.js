@@ -1,4 +1,9 @@
 import $ from 'jQuery';
+import './assets/images/pet-bunny.png';
+import './assets/images/pet-dead.png';
+import './assets/images/pet-giraffe.png';
+import './assets/images/pet-lion.png';
+import './assets/images/pet-penguin.png';
 
 function addPetButtonListeners(pet) {
   const petBox = $(`#${pet.name}`);
